@@ -14,7 +14,7 @@ var typed = new Typed('.typing-2', {
     loop: true,
 });
 
-let rowImages ='[{"filename":"3.png"},{"filename":"banner.jpg"},{"filename":"roody.jpg"},{"filename":"3.png"}]';
+let rowImages ='[{"filename":"3.png"},{"filename":"banner.png"},{"filename":"roody.png"},{"filename":"3.png"}]';
 let images = JSON.parse(rowImages);
 let randomImage = images[Math.floor(Math.random() * images.length)];
 homeFond.style.backgroundImage = `url(./img/${randomImage.filename})`;

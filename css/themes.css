@@ -7,6 +7,7 @@
     box-sizing: border-box;
     text-decoration: none;
 } 
+
 /* custom scroll bar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -23,6 +24,7 @@
 }
 section{
     padding: 100px 0;
+    height: 100vh;
 }
 .max-width{
     max-width: 1300px;
@@ -177,7 +179,7 @@ section .title::after{
 }
 .home .types-sites{
     position:absolute;
-    bottom:0;
+    bottom:30px;
     padding: 5px;
     font-size: 1.5em;
 }
@@ -185,8 +187,13 @@ section .title::after{
  
  
 /* about section styling */
+.about{
+    background: rgb(47, 47, 47);
+    color: #fff;
+ }
 .about .title::after{
     content: "who i am";
+    background: rgb(47, 47, 47);
 }
 .about .about-content .left{
     width: 45%;
@@ -228,26 +235,19 @@ section .title::after{
     background: none;
 }
 
-/* skills section styling */
- 
- 
-
-.row {
-  margin: 8px -16px;
-  
-}
-
-/* Add padding BETWEEN each column */
-.row,
-.row > .column {
-  padding: 8px;
-}
-
+/* Portfolio section styling*/
 /* Create four equal columns that floats next to each other */
 .column {
   float: left;
   width: 25%;
+  padding: 0 10px;
 }
+
+.row {
+  margin: 0px -5px;
+  
+}
+
 
 /* Clear floats after rows */ 
 .row:after {
@@ -258,9 +258,19 @@ section .title::after{
 
 /* Content */
 .contentu {
-  background-color: white;
+ 
   padding: 10px;
 }
+ 
+/* Responsive columns */
+@media screen and (max-width:600px){
+    .column {
+        float: left;
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+
 /* skills section styling */
 .skills{
     background: rgb(47, 47, 47);
