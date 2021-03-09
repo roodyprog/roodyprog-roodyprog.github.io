@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+   
 } 
 
 /* custom scroll bar */
@@ -13,14 +14,14 @@
     width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #585858;
 }
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb,::-webkit-scrollbar-thumb:hover {
     background: #888;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
+::-webkit-scrollbar-thumb {
+    background: rgba(238, 4, 35, 0.986);
 }
 section{
     padding: 100px 0;
@@ -269,6 +270,7 @@ section .title::after{
         width: 100%;
         padding: 0 10px;
     }
+    
 }
 
 /* skills section styling */
@@ -598,10 +600,7 @@ footer span a:hover{
     .home .home-content a{
         font-size: 20px;
     }
-    .services .serv-content .card{
-        width: 100%;
     }
-}
 
 @media (max-width: 500px) {
     .home .home-content .text-2{
