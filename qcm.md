@@ -12,3 +12,21 @@ QCM
 10) Sélectionne les compagnies et leurs pilotes incluant les compagnies n'ayant pas de pilote et les pilotes n'ayant pas de compagnie.
 
 TP1
+nouvelle colonne 
+ALTER TABLE pilots ADD salary TINYINT UNSIGNED, ADD salary_year TINYINT UNSIGNED;
+
+UPDATE `pilots` SET `salary` = '2000' WHERE name= 'Alan';
+UPDATE `pilots` SET `salary` = '1500' WHERE name= 'Tom';
+UPDATE `pilots` SET `salary` = '1500' WHERE name= 'Yi';
+UPDATE `pilots` SET `salary` = '2000' WHERE name= 'Sophie';
+UPDATE `pilots` SET `salary` = '2000' WHERE name= 'Albert';
+UPDATE `pilots` SET `salary` = '1500' WHERE name= 'Yan';
+UPDATE `pilots` SET `salary` = '2000' WHERE name= 'Benoit';
+UPDATE `pilots` SET `salary` = '3000' WHERE name= 'Jhon';
+UPDATE `pilots` SET `salary` = '3000' WHERE name= 'Pierre';
+
+SELECT name,salary , salary*12 AS salary_year FROM pilots;
+
+exo1
+
+
