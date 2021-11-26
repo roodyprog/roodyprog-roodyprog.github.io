@@ -39,7 +39,21 @@ UPDATE `pilots` SET `salary` = '3000' WHERE name= 'Pierre';
 
 SELECT name,salary , salary*12 AS salary_year FROM pilots;
 ```
-
+```text
++--------+--------+-------------+
+| name   | salary | salary_year |
++--------+--------+-------------+
+| Alan   |   2000 |       24000 |
+| Tom    |   1500 |       18000 |
+| Yi     |   1500 |       18000 |
+| Sophie |   2000 |       24000 |
+| Albert |   2000 |       24000 |
+| Yan    |   1500 |       18000 |
+| Benoit |   2000 |       24000 |
+| Jhon   |   3000 |       36000 |
+| Pierre |   3000 |       36000 |
++--------+--------+-------------+
+```
 ## Exercice 1)
 
 
