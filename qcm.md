@@ -42,8 +42,7 @@ SELECT name,salary , salary*12 AS salary_year FROM pilots;
 
 ```sql
 SELECT name,salary , salary*12 AS salary_year FROM pilots;
-```
-```text
+/*
 +--------+--------+-------------+
 | name   | salary | salary_year |
 +--------+--------+-------------+
@@ -57,6 +56,7 @@ SELECT name,salary , salary*12 AS salary_year FROM pilots;
 | Jhon   |   3000 |       36000 |
 | Pierre |   3000 |       36000 |
 +--------+--------+-------------+
+*/
 ```
 ## Exercice 1)
 
