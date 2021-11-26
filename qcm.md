@@ -12,8 +12,10 @@
 10) Sélectionne les compagnies et leurs pilotes incluant les compagnies n'ayant pas de pilote et les pilotes n'ayant pas de compagnie.
 
 # TP1
+## Exercice nouvelle colonne
 
-** nouvelle colonne
+1. Ajoutez la colonne salary, salaire annuel, dans la table pilots, définissez son type. Vous donnerez la requête SQL pour modifier la table. Puis faites une requête pour ajouter les salaires respectifs suivants :
+
 ```sql
 ALTER TABLE pilots ADD salary INT UNSIGNED, ADD salary_year INT UNSIGNED;
 
@@ -40,18 +42,19 @@ SELECT name,salary , salary*12 AS salary_year FROM pilots;
 
 ## Exercice 1)
 
--- 1)
+
+1. Quel est le salaire moyen.
 ```sql
 SELECT avg(salary) AS avg_salary
 FROM pilots;
 ```
--- 2) 
+2. Calculez le salaire moyen par compagnie.
 ```sql
 SELECT avg(salary) AS avg_salary, compagny
 FROM pilots
 GROUP BY compagny;
 ```
--- 3)
+3. Quels sont les pilots qui sont au-dessus du salaire moyen.
 ```sql
 SELECT name
 FROM pilots
@@ -60,14 +63,12 @@ WHERE salary > (
     FROM pilots
 );
 ```
--- 4)
+4. Calculez l'étendu des salaires.
 ```sql
 SELECT (max(salary) - min(salary)) AS salary_range
 FROM pilots;
 ```
-
-
--- 5)
+5. Quels sont les noms des compagnies qui payent leurs pilotes au-dessus de la moyenne ?
 ```sql
 SELECT name
 FROM compagnies
@@ -81,9 +82,7 @@ WHERE comp IN (
     GROUP BY compagny
 );
 ```
-
-
--- 6)
+6. Quels sont les pilotes qui par compagnie dépasse(nt) le salaire moyen ?
 ```sql
 SELECT name, compagny
 FROM pilots
@@ -93,12 +92,9 @@ WHERE salary > (
 )
 GROUP BY compagny;
 ```
+## Exercice 2
 
-
-
-## Exercice 2)
-
--- 1)
+1. Faites une requête qui diminue de 40% le salaire des pilotes de la compagnie AUS.
 ```sql
 UPDATE pilots
 SET salary = salary * 0.6
@@ -106,7 +102,7 @@ WHERE compagny = 'AUS';
 ```
 
 
--- 2)
+2. Vérifiez que les salaires des pilotes australiens sont tous inférieurs aux autres salaires des pilotes des autres compagnies.
 ```sql
 SELECT name
 FROM pilots
@@ -116,9 +112,22 @@ WHERE compagny = 'AUS' AND salary > (
     WHERE compagny != 'AUS'
 );
 ```
--- Exercices de recherche)
+## Exercices de recherche
 
--- 1)
+Pour chaque question ci-dessous créez la requête :
+
+1. On aimerait savoir quels sont les types d'avions en commun que la compagnie AUS et FRE1 exploitent.
+
+Indications : l'intersection de deux ensembles en MySQL s'implémente comme suit :
+
+```sql
+SELECT DISTINCT value FROM `table1`
+WHERE value IN (
+  SELECT value 
+  FROM `table2`
+);
+```
+
 ```sql
 SELECT DISTINCT plane
 FROM pilots
@@ -129,8 +138,9 @@ WHERE compagny = 'AUS' AND plane IN (
 );
 ```
 
+2. Quels sont les types d'avion que ces deux compagnies AUS et FRE1 exploitent (c'est l'UNION ici) ?
 
--- 2)
+Indications : Pensez à utiliser l'opérateur UNION.
 ```sql
 SELECT DISTINCT plane
 FROM pilots
@@ -141,4 +151,3 @@ FROM pilots
 WHERE compagny = 'FRE1';
 
 ```
-
