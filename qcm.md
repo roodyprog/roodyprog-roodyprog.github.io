@@ -11,8 +11,10 @@ QCM
 9) Nombre de compagnie(s) dont le nombre d'heures de vol est de moins de 200 heures.
 10) Sélectionne les compagnies et leurs pilotes incluant les compagnies n'ayant pas de pilote et les pilotes n'ayant pas de compagnie.
 
-TP1
+##TP1
+
 nouvelle colonne 
+
 ALTER TABLE pilots ADD salary TINYINT UNSIGNED, ADD salary_year TINYINT UNSIGNED;
 
 UPDATE `pilots` SET `salary` = '2000' WHERE name= 'Alan';
@@ -35,6 +37,6 @@ UPDATE `pilots` SET `salary` = '3000' WHERE name= 'Pierre';
 
 SELECT name,salary , salary*12 AS salary_year FROM pilots;
 
-exo1
+##exo1
 
 
