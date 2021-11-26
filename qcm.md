@@ -67,7 +67,17 @@ WHERE salary > (
 ```sql
 SELECT (max(salary) - min(salary)) AS salary_range
 FROM pilots;
+
++--------+
+| name   |
++--------+
+| Alan   |
+| Sophie |
+| Albert |
+| Benoit |
++--------+
 ```
+
 5. Quels sont les noms des compagnies qui payent leurs pilotes au-dessus de la moyenne ?
 ```sql
 SELECT name
