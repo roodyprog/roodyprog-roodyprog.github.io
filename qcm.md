@@ -68,7 +68,7 @@ WHERE salary > (
 SELECT (max(salary) - min(salary)) AS salary_range
 FROM pilots;
 ```
-```sql
+```text
 +--------+
 | name   |
 +--------+
