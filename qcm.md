@@ -252,11 +252,11 @@ WHERE compagny = 'FRE1';
 # TP-1 bonus
 
 ```sql
-CREATE TABLE planes` (
-    `id` INT UNSIGNED AUTO INCREMENT
-    `name` CHAR(5),
-    `description` TEXT,
-    `numFlying`  DECIMAL(8,1) NULL,
+CREATE TABLE planes (
+    id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name CHAR(5),
+    description TEXT,
+    numFlying  DECIMAL(8,1) NULL,
     CONSTRAINT pk_compagny PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB ;
+    ) ENGINE=InnoDB;
 ```
