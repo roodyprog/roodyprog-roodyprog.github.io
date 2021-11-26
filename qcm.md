@@ -252,7 +252,7 @@ WHERE compagny = 'FRE1';
 # TP-1 bonus
 
 ```sql
-CREATE TABLE plane` (
+CREATE TABLE planes` (
     `id` INT UNSIGNED AUTO INCREMENT
     `name` CHAR(5),
     `description` TEXT,
