@@ -38,6 +38,95 @@ UPDATE `pilots` SET `salary` = '3000' WHERE name= 'Pierre';
 SELECT name,salary , salary*12 AS salary_year FROM pilots;
 ```
 
-##exo1
+-- Exercice 1)
 
+-- 1)
+
+SELECT avg(salary) AS avg_salary
+FROM pilots;
+
+-- 2) 
+
+SELECT avg(salary) AS avg_salary, compagny
+FROM pilots
+GROUP BY compagny;
+
+-- 3)
+
+SELECT name
+FROM pilots
+WHERE salary > (
+    SELECT avg(salary)
+    FROM pilots
+);
+
+-- 4)
+
+SELECT (max(salary) - min(salary)) AS salary_range
+FROM pilots;
+
+-- 5)
+
+SELECT name
+FROM compagnies
+WHERE comp IN (
+    SELECT compagny
+    FROM pilots
+    WHERE salary > (
+        SELECT avg(salary)
+        FROM pilots
+    )
+    GROUP BY compagny
+);
+
+-- 6)
+
+SELECT name, compagny
+FROM pilots
+WHERE salary > (
+    SELECT avg(salary)
+    FROM pilots
+)
+GROUP BY compagny;
+
+
+-- Exercice 2)
+
+-- 1)
+
+UPDATE pilots
+SET salary = salary * 0.6
+WHERE compagny = 'AUS';
+
+-- 2)
+
+SELECT name
+FROM pilots
+WHERE compagny = 'AUS' AND salary > (
+    SELECT min(salary)
+    FROM pilots
+    WHERE compagny != 'AUS'
+);
+
+-- Exercices de recherche)
+
+-- 1)
+
+SELECT DISTINCT plane
+FROM pilots
+WHERE compagny = 'AUS' AND plane IN (
+    SELECT plane
+    FROM pilots
+    WHERE compagny = 'FRE1'
+);
+
+-- 2)
+
+SELECT DISTINCT plane
+FROM pilots
+WHERE compagny = 'AUS'
+UNION
+SELECT DISTINCT plane
+FROM pilots
+WHERE compagny = 'FRE1';
 
