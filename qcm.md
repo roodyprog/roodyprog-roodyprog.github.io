@@ -251,3 +251,12 @@ WHERE compagny = 'FRE1';
 ```
 # TP-1 bonus
 
+```sql
+CREATE TABLE plane` (
+    `id` INT UNSIGNED AUTO INCREMENT
+    `name` CHAR(5),
+    `description` TEXT,
+    `numFlying`  DECIMAL(8,1) NULL,
+    CONSTRAINT pk_compagny PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB ;
+```
