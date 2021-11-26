@@ -13,7 +13,7 @@
 
 # TP1
 
-**nouvelle colonne**
+** nouvelle colonne
 ```sql
 ALTER TABLE pilots ADD salary INT UNSIGNED, ADD salary_year INT UNSIGNED;
 
@@ -38,35 +38,37 @@ UPDATE `pilots` SET `salary` = '3000' WHERE name= 'Pierre';
 SELECT name,salary , salary*12 AS salary_year FROM pilots;
 ```
 
--- Exercice 1)
+## Exercice 1)
 
 -- 1)
-
+```sql
 SELECT avg(salary) AS avg_salary
 FROM pilots;
-
+```
 -- 2) 
-
+```sql
 SELECT avg(salary) AS avg_salary, compagny
 FROM pilots
 GROUP BY compagny;
-
+```
 -- 3)
-
+```sql
 SELECT name
 FROM pilots
 WHERE salary > (
     SELECT avg(salary)
     FROM pilots
 );
-
+```
 -- 4)
-
+```sql
 SELECT (max(salary) - min(salary)) AS salary_range
 FROM pilots;
+```
+
 
 -- 5)
-
+```sql
 SELECT name
 FROM compagnies
 WHERE comp IN (
@@ -78,9 +80,11 @@ WHERE comp IN (
     )
     GROUP BY compagny
 );
+```
+
 
 -- 6)
-
+```sql
 SELECT name, compagny
 FROM pilots
 WHERE salary > (
@@ -88,18 +92,22 @@ WHERE salary > (
     FROM pilots
 )
 GROUP BY compagny;
+```
 
 
--- Exercice 2)
+
+## Exercice 2)
 
 -- 1)
-
+```sql
 UPDATE pilots
 SET salary = salary * 0.6
 WHERE compagny = 'AUS';
+```
+
 
 -- 2)
-
+```sql
 SELECT name
 FROM pilots
 WHERE compagny = 'AUS' AND salary > (
@@ -107,11 +115,11 @@ WHERE compagny = 'AUS' AND salary > (
     FROM pilots
     WHERE compagny != 'AUS'
 );
-
+```
 -- Exercices de recherche)
 
 -- 1)
-
+```sql
 SELECT DISTINCT plane
 FROM pilots
 WHERE compagny = 'AUS' AND plane IN (
@@ -119,9 +127,11 @@ WHERE compagny = 'AUS' AND plane IN (
     FROM pilots
     WHERE compagny = 'FRE1'
 );
+```
+
 
 -- 2)
-
+```sql
 SELECT DISTINCT plane
 FROM pilots
 WHERE compagny = 'AUS'
@@ -129,4 +139,6 @@ UNION
 SELECT DISTINCT plane
 FROM pilots
 WHERE compagny = 'FRE1';
+
+```
 
