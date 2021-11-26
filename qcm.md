@@ -16,8 +16,8 @@ QCM
 -**nouvelle colonne**-
 ```sql
 ALTER TABLE pilots 
-ADD salary TINYINT UNSIGNED, 
-ADD salary_year TINYINT UNSIGNED;
+ADD salary INT UNSIGNED, 
+ADD salary_year INT UNSIGNED;
 
 UPDATE `pilots` SET `salary` = '2000' WHERE name= 'Alan';
 
