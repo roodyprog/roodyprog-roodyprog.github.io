@@ -61,16 +61,6 @@ SELECT avg(salary) AS avg_salary, compagny
 FROM pilots
 GROUP BY compagny;
 ```
-3. Quels sont les pilots qui sont au-dessus du salaire moyen.
-```sql
-SELECT name
-FROM pilots
-WHERE salary > (
-    SELECT avg(salary)
-    FROM pilots
-);
-```
-
 ```text
 +------------+----------+
 | avg_salary | compagny |
@@ -81,6 +71,24 @@ WHERE salary > (
 |  1500.0000 | SIN      |
 +------------+----------+
 ```
+3. Quels sont les pilots qui sont au-dessus du salaire moyen.
+```sql
+SELECT name
+FROM pilots
+WHERE salary > (
+    SELECT avg(salary)
+    FROM pilots
+);
+```
+```text
++--------+
+| name   |
++--------+
+| Jhon   |
+| Pierre |
++--------+
+```
+
 4. Calculez l'étendu des salaires.
 ```sql
 SELECT (max(salary) - min(salary)) AS salary_range
