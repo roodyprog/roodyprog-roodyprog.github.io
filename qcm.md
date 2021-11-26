@@ -1,4 +1,4 @@
-QCM
+# QCM
 
 1) INNODB
 2) il s'applique aux types INT 
