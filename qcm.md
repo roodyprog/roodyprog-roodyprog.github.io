@@ -127,7 +127,7 @@ WHERE value IN (
   FROM `table2`
 );
 ```
-
+reponse :
 ```sql
 SELECT DISTINCT plane
 FROM pilots
