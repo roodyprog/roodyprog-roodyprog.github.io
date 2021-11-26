@@ -11,7 +11,7 @@
 9) Nombre de compagnie(s) dont le nombre d'heures de vol est de moins de 200 heures.
 10) Sélectionne les compagnies et leurs pilotes incluant les compagnies n'ayant pas de pilote et les pilotes n'ayant pas de compagnie.
 
-# TP1
+# TP-1
 ## Exercice nouvelle colonne
 
 1. Ajoutez la colonne salary, salaire annuel, dans la table pilots, définissez son type. Vous donnerez la requête SQL pour modifier la table. Puis faites une requête pour ajouter les salaires respectifs suivants :
@@ -151,3 +151,5 @@ FROM pilots
 WHERE compagny = 'FRE1';
 
 ```
+# TP-1 bonus
+
