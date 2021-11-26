@@ -14,7 +14,7 @@ QCM
 ##TP1
 
 nouvelle colonne 
-
+```sql
 ALTER TABLE pilots ADD salary TINYINT UNSIGNED, ADD salary_year TINYINT UNSIGNED;
 
 UPDATE `pilots` SET `salary` = '2000' WHERE name= 'Alan';
@@ -36,6 +36,7 @@ UPDATE `pilots` SET `salary` = '3000' WHERE name= 'Jhon';
 UPDATE `pilots` SET `salary` = '3000' WHERE name= 'Pierre';
 
 SELECT name,salary , salary*12 AS salary_year FROM pilots;
+```
 
 ##exo1
 
