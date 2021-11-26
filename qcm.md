@@ -13,7 +13,7 @@ QCM
 
 ***TP1***
 
--**nouvelle colonne**-
+**nouvelle colonne**
 ```sql
 ALTER TABLE pilots ADD salary INT UNSIGNED, ADD salary_year INT UNSIGNED;
 
