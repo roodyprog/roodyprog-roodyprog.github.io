@@ -191,9 +191,25 @@ WHERE value IN (
 ```
 reponse :
 ```sql
- 
+ SELECT DISTINCT p.compagny, plane
+FROM pilots AS p
+INNER JOIN compagnies AS c
+ON p.compagny = c.comp
+WHERE compagny IN (
+  SELECT comp FROM compagnies
+  )
+GROUP BY compagny;
 ```
-
+```text
++----------+-------+
+| compagny | plane |
++----------+-------+
+| AUS      | A380  |
+| CHI      | A320  |
+| FRE1     | A320  |
+| SIN      | A340  |
++----------+-------+
+```
 2. Quels sont les types d'avion que ces deux compagnies AUS et FRE1 exploitent (c'est l'UNION ici) ?
 
 Indications : Pensez à utiliser l'opérateur UNION.
