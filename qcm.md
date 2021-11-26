@@ -48,6 +48,13 @@ SELECT name,salary , salary*12 AS salary_year FROM pilots;
 SELECT avg(salary) AS avg_salary
 FROM pilots;
 ```
+```text
++------------+
+| avg_salary |
++------------+
+|  2055.5556 |
++------------+
+```
 2. Calculez le salaire moyen par compagnie.
 ```sql
 SELECT avg(salary) AS avg_salary, compagny
@@ -62,6 +69,17 @@ WHERE salary > (
     SELECT avg(salary)
     FROM pilots
 );
+```
+
+```text
++------------+----------+
+| avg_salary | compagny |
++------------+----------+
+|  2000.0000 | AUS      |
+|  3000.0000 | CHI      |
+|  2250.0000 | FRE1     |
+|  1500.0000 | SIN      |
++------------+----------+
 ```
 4. Calculez l'étendu des salaires.
 ```sql
@@ -93,6 +111,14 @@ WHERE comp IN (
     GROUP BY compagny
 );
 ```
+```text
++------------+
+| name       |
++------------+
+| Air France |
+| CHINA Air  |
++------------+
+```
 6. Quels sont les pilotes qui par compagnie dépasse(nt) le salaire moyen ?
 ```sql
 SELECT name, compagny
@@ -111,7 +137,14 @@ UPDATE pilots
 SET salary = salary * 0.6
 WHERE compagny = 'AUS';
 ```
-
+```text
++--------+----------+
+| name   | compagny |
++--------+----------+
+| Pierre | CHI      |
+| Jhon   | FRE1     |
++--------+----------+
+```
 
 2. Vérifiez que les salaires des pilotes australiens sont tous inférieurs aux autres salaires des pilotes des autres compagnies.
 ```sql
@@ -122,6 +155,16 @@ WHERE compagny = 'AUS' AND salary > (
     FROM pilots
     WHERE compagny != 'AUS'
 );
+```
+```text
++--------+
+| name   |
++--------+
+| Alan   |
+| Sophie |
+| Albert |
+| Benoit |
++--------+
 ```
 ## Exercices de recherche
 
@@ -140,13 +183,7 @@ WHERE value IN (
 ```
 reponse :
 ```sql
-SELECT DISTINCT plane
-FROM pilots
-WHERE compagny = 'AUS' AND plane IN (
-    SELECT plane
-    FROM pilots
-    WHERE compagny = 'FRE1'
-);
+ 
 ```
 
 2. Quels sont les types d'avion que ces deux compagnies AUS et FRE1 exploitent (c'est l'UNION ici) ?
@@ -161,6 +198,14 @@ SELECT DISTINCT plane
 FROM pilots
 WHERE compagny = 'FRE1';
 
+```
+```text
++-------+
+| plane |
++-------+
+| A380  |
+| A320  |
++-------+
 ```
 # TP-1 bonus
 
